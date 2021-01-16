@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--           tworzenie wlasne przestrzeni nazw zeby stworzyc swoj typ danych - tutaj com.example.springbootsoapexample.student-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://example.com/soap-example"
+           targetNamespace="http://example.com/soap-example"
+>
+
+    <xs:element name="getStudent">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="student" type="tns:student"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<!--    tworzenie wlasnego typu-->
+        <xs:complexType name="student">
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="surname" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+
+<!--    wygenerowanie modelu na podstawie pliku xsd
+        tools-jaxb-generate code from xml with jaxb
+        sa tez na necie generatory
+-->
+
+</xs:schema>
